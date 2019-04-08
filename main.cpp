@@ -61,7 +61,7 @@ int main()
 	item4->nKey = 34;
 	InsertFront( Head, item4 );
 
-	//Wstawianie element przed wybrany
+	//Wstawianie elementu przed wybrany, tutaj o nKey 3
 	LISTINFO key = {3};
 	ListItem* pPrev = NULL;
 	ListItem* p = NULL;
@@ -80,7 +80,7 @@ int main()
 	p = NULL;
 	pPrev = NULL;
 
-	//Dodatnie dodatkowy elementów na pocz¹tek listy
+	//Dodatnie dodatkowy elementÃ³w na poczÄ…tek listy
 	for( int i = 0; i < 25; i++ )
 	{
 		LISTINFO* item = (LISTINFO*)malloc( sizeof( LISTINFO ) );
@@ -105,7 +105,7 @@ int main()
 	//Usuwanie elementu
 	key = {34};
 	p = Find( Head, &key, &pPrev, compare );
-	Remove( pPrev ); //Musimy daæ pPrev, bo wskazuje na element po key
+	Remove( pPrev );
 	p = NULL;
 	pPrev = NULL;
 
@@ -113,7 +113,7 @@ int main()
 		PrintList( Head );
 	#endif 
 
-	printf( "Head value: %d\n", Front( Head )->m_pInfo->nKey ); //wypisze pocz¹tek listy
+	printf( "Head value: %d\n", Front( Head )->m_pInfo->nKey ); 
 
 	FreeList( Head );
 	free( Head );
@@ -122,7 +122,7 @@ int main()
 	return 0;
 }
 
-int compare( const void* p, const void* v ) //wskaŸniktypu void, który wskazuje obiekt dowolnego typu
+int compare( const void* p, const void* v ) //wskaÅºniktypu void, ktÃ³ry wskazuje obiekt dowolnego typu
 {
 	if( ((LISTINFO*)p)->nKey < ((LISTINFO*)v)->nKey )
 		return -1;
